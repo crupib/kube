@@ -1,0 +1,23 @@
+- github:crupib
+write_files:
+- path: /var/lib/connman/default.config
+  content: |-
+    [service_eth0]
+    Type=ethernet
+    IPv4=192.168.99.170/255.255.255.0/192.168.99.1
+    IPv6=off
+    Nameservers=192.168.133.10
+    SearchDomains=jcudev.corp
+    Domain=jcudev.corp
+    TimeServers=pool.ntp.org
+hostname: k30sjcu
+
+k3os:
+
+
+  k3sArgs:
+    - server
+    - --cluster-init
+    - --tls-san=cl01-k3s.int.vxsan.com
+    - --flannel-backend=host-gw
+Now we'll go through this file section by section:

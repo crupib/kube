@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-debug
+  labels:
+    app: mydebug
+    rel: stable
+spec:
+  containers:
+    - name:  mydebugimg
+      image: gcr.io/kubernetes-e2e-test-images/dnsutils:1.3
+      ports:
+      - containerPort: 80

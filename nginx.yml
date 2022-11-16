@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bc-nginx
+  labels:
+    app: nginx
+    rel: stable
+spec:
+  containers:
+    - name: bc-nginx
+      image: crupidocker/myngix:latest
+      ports:
+      - containerPort: 80
